@@ -1,5 +1,6 @@
 package com.code.leet;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -48,13 +49,38 @@ public class L0039CombinationSum {
 
         return r;
     }
+    public List<List<Integer>> combinationSum5(int[] candidates, int target) {
+
+        List<List<Integer>> r = new LinkedList<>();
+        List<Integer> list = new LinkedList<>();
+        combinationSum(candidates, target, 0, list, r);
+        return r;
+
+    }
+
+    private void combinationSum(int[] candidates, int target, int p, List<Integer> list, List<List<Integer>> r) {
+        if (target < 0) return;
+        if (target == 0) {
+            if (list.size() > 0) {
+                r.add(new ArrayList<>(list));
+                return;
+            }
+        }
+        LinkedList<Integer> integers = new LinkedList<>(list);
+        integers.add(candidates[p]);
+        combinationSum(candidates, target - candidates[p], p, integers, r);
+        if (p < candidates.length - 1) {
+            combinationSum(candidates, target, p + 1, list, r);
+        }
+
+    }
 
     public static void main(String[] args) {
 //        int[] nums = {1, 1, 3, 4, 3};
         int[] nums = {4, 2, 1};
 //        int[] nums = {1, 3, 5, 6, 3, 3, 2, 1, 7, 4, 4};
         int target = 32;
-        List <List <Integer>> lists = new L0039CombinationSum().combinationSum(nums, target);
+        List <List <Integer>> lists = new L0039CombinationSum().combinationSum5(nums, target);
         for (int i = 0; i < lists.size(); i++) {
             List <Integer> list = lists.get(i);
             for (int j = 0; j < list.size(); j++) {

@@ -15,7 +15,7 @@ public class L0046Permutation {
 
 	public static void main(String[] args) {
 		// TODO
-		int []nums=new int[]{1, 1, 1, 4};
+		int []nums=new int[]{1, 2, 3};
 		Integer [] nums2 = new Integer[nums.length];
 		List<List<Integer>> permute6 = new L0046Permutation().permute2(nums);
 		for (Iterator iterator = permute6.iterator(); iterator.hasNext();) {
@@ -115,6 +115,31 @@ public class L0046Permutation {
 			j--;
 		}
 		
+	}
+	// 1ms
+	public List<List<Integer>> permute5(int[] nums) {
+		return dfs(nums, 0);
+
+	}
+
+	private List<List<Integer>> dfs(int[] nums, int p) {
+		List<List<Integer>> r = new LinkedList<>();
+		if (p == nums.length) {
+			List<Integer> integerList = new ArrayList<>();
+			for (int i = 0; i < nums.length; i++) {
+				integerList.add(nums[i]);
+			}
+			r.add(integerList);
+			return r;
+		}
+
+		for (int i = p; i < nums.length; i++) {
+			swap(nums, i, p);
+			r.addAll(dfs(nums, p + 1));
+			swap(nums, i, p);
+		}
+
+		return r;
 	}
 	private static void swap(int[] nums, int i, int j) {
 		// TODO 

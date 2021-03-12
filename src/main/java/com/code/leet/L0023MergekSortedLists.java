@@ -47,26 +47,27 @@ public class L0023MergekSortedLists {
         }
         return r.next;
     }
+
     public ListNode mergeKLists2(ListNode[] lists) {
-        Queue<ListNode> set = new PriorityQueue<>(lists.length,new NodeComparator());
-        ListNode r = null,tail=r;
-        for(ListNode list:lists){
-            if (list!=null) {
+        Queue<ListNode> set = new PriorityQueue<>(lists.length, new NodeComparator());
+        ListNode r = null, tail = r;
+        for (ListNode list : lists) {
+            if (list != null) {
                 set.offer(list);
             }
         }
 
-        while(!set.isEmpty()){
+        while (!set.isEmpty()) {
             ListNode tmp = set.poll();
-            if (tmp.next!=null) {
+            if (tmp.next != null) {
                 set.add(tmp.next);
             }
-            if (r==null) {
+            if (r == null) {
                 r = tmp;
-                tail=tmp;
-            }else {
-                tail.next=tmp;
-                tail=tail.next;
+                tail = tmp;
+            } else {
+                tail.next = tmp;
+                tail = tail.next;
             }
         }
         return r;
@@ -75,16 +76,20 @@ public class L0023MergekSortedLists {
     public class ListNode {
         int val;
         ListNode next;
-        ListNode(int x) { val = x; }
+
+        ListNode(int x) {
+            val = x;
+        }
     }
-    class NodeComparator implements Comparator<ListNode>{
+
+    class NodeComparator implements Comparator<ListNode> {
 
         @Override
         public int compare(ListNode o1, ListNode o2) {
             // TODO
-            if (o1.val>o2.val) {
+            if (o1.val > o2.val) {
                 return 1;
-            }else if(o1.val<o2.val) {
+            } else if (o1.val < o2.val) {
                 return -1;
             }
             return 0;

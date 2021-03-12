@@ -1,7 +1,4 @@
 package com.code.syntax;
-/**
- * 
- */
 
 /**
 	1，  先执行内部静态对象的构造函数，如果有多个按定义的先后顺序执行；而且静态类的构造函数只会被执行一次，只在其第一个对象创建时调用，即便是创建了同一个类的多个对象，例如main（）函数里b1,b2创建了同一个类的两个对象，但是grandmaMotherClass的构造函数只被执行了一次
@@ -9,8 +6,6 @@ package com.code.syntax;
 	3，  再执行内部普通对象的构造函数
 	4，  最后执行该类本身的构造函数
  */
-
-
 public class ConstructorTest extends FatherClass{
     MotherClass b = new MotherClass();
     static GandmaClass b1 = new GandmaClass();

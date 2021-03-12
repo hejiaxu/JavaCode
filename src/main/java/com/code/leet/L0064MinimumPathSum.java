@@ -26,12 +26,12 @@ public class L0064MinimumPathSum {
 	
 	//4ms
     public static int minPathSum(int[][] grid) {
-        if (grid==null||grid.length==0) {
+		if (grid==null||grid.length==0) {
 			return 0;
 		}
-        int n = grid.length,m=grid[0].length;
-        int[] tmp = new int[m];
-        for (int i = 0; i < n; i++) {
+		int n = grid.length,m=grid[0].length;
+		int[] tmp = new int[m];
+		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < m; j++) {
 				if (j==0){
 					tmp[j]+=grid[i][j];
@@ -42,7 +42,7 @@ public class L0064MinimumPathSum {
 				}
 			}
 		}
-        return tmp[m-1];
-    }
+		return tmp[m-1];
+	}
 
 }

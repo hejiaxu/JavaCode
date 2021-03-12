@@ -1,9 +1,8 @@
-package com.code.mq.blockqueue;
+package com.code.middleware.mq;
 
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.SynchronousQueue;
 
 /**
 Created by hejiaxu on 2020/1/3

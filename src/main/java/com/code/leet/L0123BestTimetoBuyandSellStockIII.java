@@ -11,22 +11,39 @@ You may not engage in multiple transactions at the same time
  */
 public class L0123BestTimetoBuyandSellStockIII {
     public static void main(String[] args) {
-        int[] prices = {2,1,2,1,0,0,1};
-        int i = new L0123BestTimetoBuyandSellStockIII().maxProfit(prices);
+        int[] prices = {1,2,3,4};
+        int i = new L0123BestTimetoBuyandSellStockIII().maxProfit3(prices);
         System.out.println(i);
     }
+
     public int maxProfit(int[] prices) {
         int hold1 = Integer.MIN_VALUE, hold2 = Integer.MIN_VALUE;
         int release1 = 0, release2 = 0;
-        for(int i:prices){                                // Assume we only have 0 money at first
+        for (int i : prices) {                                // Assume we only have 0 money at first
             release2 = Math.max(release2, hold2 + i);     // The maximum if we've just sold 2nd stock so far.
-            hold2    = Math.max(hold2,    release1 - i);  // The maximum if we've just buy  2nd stock so far.
+            hold2 = Math.max(hold2, release1 - i);  // The maximum if we've just buy  2nd stock so far.
             release1 = Math.max(release1, hold1 + i);     // The maximum if we've just sold 1nd stock so far.
-            hold1    = Math.max(hold1,    -i);            // The maximum if we've just buy  1st stock so far.
+            hold1 = Math.max(hold1, -i);            // The maximum if we've just buy  1st stock so far.
         }
         return release2; ///Since release1 is initiated as 0, so release2 will always higher than release1.
     }
 
+
+    public int maxProfit3(int[] prices) {
+        int[][] profit =  new int[prices.length + 1][4];
+        profit[0][0] = Integer.MIN_VALUE;
+        profit[0][1] = 0;
+        profit[0][2] = Integer.MIN_VALUE;
+        profit[0][3] = 0;
+
+        for (int i = 1; i <= prices.length; i++) {
+            profit[i][3] = Math.max(profit[i - 1][3], profit[i - 1][2] + prices[i - 1]);     // The maximum if we've just sold 2nd stock so far.
+            profit[i][2] = Math.max(profit[i - 1][2], profit[i - 1][1] - prices[i - 1]);  // The maximum if we've just buy  2nd stock so far.
+            profit[i][1] = Math.max(profit[i - 1][1], profit[i - 1][0] + prices[i - 1]);     // The maximum if we've just sold 1nd stock so far.
+            profit[i][0] = Math.max(profit[i - 1][0], -prices[i - 1]);            // The maximum if we've just buy  1st stock so far.
+        }
+        return profit[prices.length][3]; ///Since release1 is initiated as 0, so release2 will always higher than release1.
+    }
 
 
     public int maxProfit2(int[] prices) {

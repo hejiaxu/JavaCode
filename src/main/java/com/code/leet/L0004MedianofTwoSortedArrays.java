@@ -8,9 +8,9 @@ Find the median of the two sorted arrays. The overall run time complexity should
 public class L0004MedianofTwoSortedArrays {
 
     public static void main(String[] args) {
-        int[] nums1 = {1, 3, 4};
-        int[] nums2 = {2};
-        double medianSortedArrays = new L0004MedianofTwoSortedArrays().findMedianSortedArrays(nums1, nums2);
+        int[] nums1 = {1, 2};
+        int[] nums2 = {3, 4};
+        double medianSortedArrays = new L0004MedianofTwoSortedArrays().findMedianSortedArrays2(nums1, nums2);
         System.out.println(medianSortedArrays);
     }
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
@@ -46,7 +46,8 @@ public class L0004MedianofTwoSortedArrays {
         int m = nums1.length,n=nums2.length;
         int a = (m+n+1)/2;
         int b = (m+n+2)/2;
-        return (findKth(nums1, 0, m, nums2, 0, n, a)+ findKth(nums1, 0, m, nums2, 0, n, b))/2.0;
+//        return (findKth(nums1, 0, m, nums2, 0, n, a)+ findKth(nums1, 0, m, nums2, 0, n, b))/2.0;
+        return (findKth(nums1,nums2, a)+ findKth(nums1,  nums2, b))/2.0;
     }
 
 
@@ -66,5 +67,33 @@ public class L0004MedianofTwoSortedArrays {
         }
 
         return findKth(s, sStart+ti, sEnd, t, tStart, tEnd, k-ti);
+    }
+
+
+    private int findKth(int[] arr1, int[] arr2, int k) {
+        int pos1 = 0, pos2 = 0;
+        while (k > 1) {
+            if (pos1 >= arr1.length) {
+                return arr2[pos2 + k - 1];
+            } else if (pos2 >= arr2.length) {
+                return arr1[pos1 + k - 1];
+            }
+            int nextPost1 = pos1 + k / 2 - 1 > arr1.length - 1 ? arr1.length - 1 : pos1 + k / 2 - 1;
+            int nextPost2 = pos2 + k / 2 - 1 > arr2.length - 1 ? arr2.length - 1 : pos2 + k / 2 - 1;
+            if (arr1[nextPost1] < arr2[nextPost2]) {
+                k -= nextPost1 - pos1 + 1;
+                pos1 = nextPost1 + 1;
+            } else {
+                k -= nextPost2 - pos2 + 1;
+                pos2 = nextPost2 + 1;
+            }
+
+        }
+        if (pos1 >= arr1.length) {
+            return arr2[pos2 + k - 1];
+        } else if (pos2 >= arr2.length) {
+            return arr1[pos1 + k - 1];
+        }
+        return arr1[pos1] < arr2[pos2] ? arr1[pos1] : arr2[pos2];
     }
 }
