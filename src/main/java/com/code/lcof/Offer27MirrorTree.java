@@ -62,3 +62,5 @@ public class Offer27MirrorTree {
         }
     }
 }
+
+// 递归，从每个节点看都是左右互换

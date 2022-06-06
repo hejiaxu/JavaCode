@@ -76,3 +76,5 @@ public class Offer25MergeTwoLists {
         ListNode(int x) { val = x; }
     }
 }
+// 新起一个链表尾追加,循环追加
+// 当某个链表为空或者处理完

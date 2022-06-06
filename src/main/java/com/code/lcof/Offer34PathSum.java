@@ -78,3 +78,5 @@ public class Offer34PathSum {
         }
     }
 }
+// 递归，使用栈记录路径，到叶子new成list添加到结果中
+// 通过计算总和剪枝

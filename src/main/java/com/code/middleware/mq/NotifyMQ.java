@@ -84,4 +84,49 @@ public class NotifyMQ {
         }
     }
 
+    private static void testPC() {
+        Queue<Integer> queue = new LinkedList<>();
+        Integer SIZE = 10;
+
+        new Thread(() -> {
+            while (true) {
+                synchronized (queue) {
+                    if (queue.size() == SIZE) {
+                        try {
+                            queue.wait();
+                            System.out.println("producer-wait");
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    System.out.println("producer-" + queue.size());
+                    queue.offer(new Random().nextInt(100));
+                    queue.notifyAll();
+                }
+
+            }
+        }).start();
+
+
+        new Thread(() -> {
+            while (true) {
+                synchronized (queue) {
+                    if (queue.size() == 0) {
+                        try {
+                            queue.wait();
+                            System.out.println("consumer-wait");
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    Integer poll = queue.poll();
+                    System.out.println(poll);
+                    System.out.println("consumer-" + queue.size());
+                    queue.notifyAll();
+                }
+
+            }
+        }).start();
+    }
+
 }

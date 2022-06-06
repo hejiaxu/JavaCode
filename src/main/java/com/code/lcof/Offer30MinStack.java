@@ -50,7 +50,6 @@ public class Offer30MinStack {
         }
     }
 
-
     public void pop() {
         if(a.pop().equals(b.peek()))
             b.pop();
@@ -64,3 +63,6 @@ public class Offer30MinStack {
         return b.peek();
     }
 }
+
+// 用一个栈记录最小值,最小栈，小于等于最小的放在最上面
+// 第一个元素时最小栈为空

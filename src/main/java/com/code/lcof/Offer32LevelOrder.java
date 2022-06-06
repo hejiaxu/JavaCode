@@ -61,3 +61,5 @@ public class Offer32LevelOrder {
         }
     }
 }
+// 使用队列，广度遍历
+// 长度未知，可以通过stream api转成int数组

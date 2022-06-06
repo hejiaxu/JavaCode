@@ -13,6 +13,7 @@ import java.util.Set;
  */
 public class Offer03FindRepeatNumber {
 
+    /**  */
     public int findRepeatNumber(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {
@@ -25,3 +26,4 @@ public class Offer03FindRepeatNumber {
         return -1;
     }
 }
+// review

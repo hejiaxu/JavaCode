@@ -72,3 +72,5 @@ public class Offer33VerifyPostorder {
         }
     }
 }
+
+// 递归，左边连续小于尾部，右边连续大于尾部

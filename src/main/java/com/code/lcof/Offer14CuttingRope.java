@@ -22,17 +22,15 @@ package com.code.lcof;
 public class Offer14CuttingRope {
     public static void main(String[] args) {
 
-        int n = 8;
+        int n = 21;
         // 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
         // 2
 
-        int r = new Offer14CuttingRope().cuttingRope1(n);
+        int r = new Offer14CuttingRope().cuttingRope2(n);
         System.out.println(r);
     }
 
-    int count = 0;
-
-    public int cuttingRope(int n) {
+    public int cuttingRope2(int n) {
         int[] r = new int[n];
         r[0] = 1;
         for (int i = 1; i < n; i++) {
@@ -59,3 +57,5 @@ public class Offer14CuttingRope {
         return n <= 3 ? n - 1 : (int) Math.pow(3, n / 3) * 4 / (4 - n % 3);
     }
 }
+
+// reviewed

@@ -9,12 +9,49 @@ import java.util.Stack;
  */
 public class Offer09CQueue {
     public static void main(String[] args) {
+        Offer09CQueue offer09CQueue = new Offer09CQueue();
+        offer09CQueue.appendTail(1);
+        offer09CQueue.appendTail(2);
+        System.out.println(offer09CQueue.deleteHead());
+
+        offer09CQueue.appendTail(3);
+        offer09CQueue.appendTail(4);
+        System.out.println(offer09CQueue.deleteHead());
+        offer09CQueue.appendTail(5);
+        offer09CQueue.appendTail(6);
+        System.out.println(offer09CQueue.deleteHead());
+        offer09CQueue.appendTail(7);
+        System.out.println(offer09CQueue.deleteHead());
+        System.out.println(offer09CQueue.deleteHead());
+        System.out.println(offer09CQueue.deleteHead());
+
+        System.out.println(offer09CQueue.deleteHead());
+        System.out.println(offer09CQueue.deleteHead());
+
+        System.out.println(offer09CQueue.deleteHead());
+
     }
 
     Stack<Integer> stack1 = new Stack<>(), stack2 = new Stack<>();
 
     public Offer09CQueue() {
 
+    }
+
+    public void appendTail2(int value) {
+        stack2.push(value);
+    }
+
+    public int deleteHead2() {
+        while (!stack2.isEmpty()) {
+            stack1.push(stack2.pop());
+        }
+        int r = stack1.isEmpty() ? -1 : stack1.pop();
+        while (!stack1.isEmpty()) {
+            stack2.push(stack1.pop());
+
+        }
+        return r;
     }
 
     public void appendTail(int value) {

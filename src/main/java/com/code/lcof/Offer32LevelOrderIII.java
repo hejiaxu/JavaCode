@@ -1,6 +1,5 @@
 package com.code.lcof;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -76,3 +75,4 @@ public class Offer32LevelOrderIII {
         }
     }
 }
+// 队列+pair存下所在层级，每次层级变化的时候换一个新列表存储，奇数offerLast,偶数offerFirst

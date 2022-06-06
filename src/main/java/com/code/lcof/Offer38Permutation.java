@@ -104,3 +104,5 @@ public class Offer38Permutation {
         chars[j] = tmp;
     }
 }
+
+// 方案1.深度遍历，每一层通过set去重。方案2.通过布尔数组记录已经选中元素,排序，去掉重复元素

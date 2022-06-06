@@ -47,3 +47,4 @@ public class Offer24ReverseList {
         ListNode(int x) { val = x; }
     }
 }
+// 起一个虚拟head0,在head0和head之间依次遍历插入链表

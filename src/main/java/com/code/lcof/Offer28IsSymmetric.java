@@ -77,3 +77,5 @@ public class Offer28IsSymmetric {
         }
     }
 }
+
+// 递归遍历，从每个节点看子节点都是对称的

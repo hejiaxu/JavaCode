@@ -1,9 +1,5 @@
 package com.code.lcof;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -90,3 +86,5 @@ public class Offer41MedianFinder {
 
 
 }
+
+// 方案1.两个有优先级队列.谁少往谁放。方案2.找第k大数找两次

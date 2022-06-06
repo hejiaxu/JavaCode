@@ -33,13 +33,13 @@ import java.util.Stack;
 public class Offer31ValidateStackSequences {
     public static void main(String[] args) {
         int[] pushed = new int[]{1, 2, 3, 4, 5};
-//        int[] popped = new int[]{4, 3, 5, 1, 2};
-        int[] popped = new int[]{4, 3, 5, 2, 1};
+        int[] popped = new int[]{4, 3, 5, 1, 2};
+//        int[] popped = new int[]{4, 3, 5, 2, 1};
         boolean r = new Offer31ValidateStackSequences().validateStackSequences(pushed, popped);
         System.out.println(r);
     }
 
-       public boolean validateStackSequences(int[] pushed, int[] popped) {
+    public boolean validateStackSequences(int[] pushed, int[] popped) {
         if (pushed.length == 0 && popped.length == 0) {
             return true;
         } else if (pushed.length == 0) {
@@ -69,4 +69,42 @@ public class Offer31ValidateStackSequences {
         return i == pushed.length && j == popped.length;
     }
 
+    public boolean validateStackSequences2(int[] pushed, int[] popped) {
+        if (pushed.length == 0 && popped.length == 0) {
+            return true;
+        } else if (pushed.length == 0) {
+            return false;
+        }
+        Stack<Integer> stack = new Stack<>();
+        int i = 0, j = 0;
+
+        while (j < popped.length || i < pushed.length) {
+            if (j == popped.length) {
+                break;
+            } else if (i == pushed.length) {
+                if (popped[j] == stack.peek()) {
+                    stack.pop();
+                    j++;
+                } else {
+                    break;
+                }
+            }
+            else if (popped[j] == pushed[i]) {
+                j++;
+                i++;
+            } else if (stack.isEmpty()) {
+                stack.push(pushed[i++]);
+            } else if (popped[j] == stack.peek()) {
+                stack.pop();
+                j++;
+            } else {
+                stack.push(pushed[i++]);
+            }
+        }
+        return stack.isEmpty() && i == pushed.length && j == popped.length;
+
+    }
+
 }
+// 依次push过程中，相同则还原pop。可以放入stack之后比，也可以放之前比。
+// 注意1.循环条件。2.数组长度和边界

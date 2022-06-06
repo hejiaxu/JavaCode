@@ -26,28 +26,28 @@ package com.code.lcof;
  */
 public class Offer44FindNthDigit {
     public static void main(String[] args) {
-        int nthDigit2 = new Offer44FindNthDigit().findNthDigit2(3);
+        int nthDigit2 = new Offer44FindNthDigit().findNthDigit(1);
         System.out.println(nthDigit2);
     }
 
     /**
      * 1.每个区间10倍增加
      * 2.计算区间
-     * 3.按照数字除取的数字
-     * 4.按照取余取的位数
+     * 3.按照数字除取的数字  n - 1 / 单数位数
+     * 4.按照取余取的位数, n-1 mod 单数位数
      */
     public int findNthDigit(int n) {
-        int digit = 1;
+        int digitNum = 1;
         long start = 1;
-        long count = 9;
-        while (n > count) { // 1.
-            n -= count;
-            digit += 1;
+        long countNum = 9;
+        while (n > countNum) { // 1.
+            n -= countNum;
+            digitNum += 1;
             start *= 10;
-            count = digit * start * 9;
+            countNum = digitNum * start * 9;
         }
-        long num = start + (n - 1) / digit; // 2.
-        return Long.toString(num).charAt((n - 1) % digit) - '0'; // 3.
+        long num = start + (n - 1) / digitNum; // 2.
+        return Long.toString(num).charAt((n - 1) % digitNum) - '0'; // 3.
     }
 
     /**

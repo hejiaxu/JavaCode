@@ -57,10 +57,11 @@ public class Offer36TreeToDoublyList {
         }
         dfs(head.left);
 
+        if (h == null) {
+            h = head;
+        }
         if (pre != null) {
             pre.right = head;
-        } else {
-            h = head;
         }
         head.left = pre;
         pre = head;
@@ -87,3 +88,6 @@ public class Offer36TreeToDoublyList {
     }
 
 }
+
+// 递归中序遍历，用全局pre记录前一个点，处理前一个点right，当前点的left
+// 注意首个点处理。

@@ -1,12 +1,10 @@
 package com.code.lcof;
 
-import com.sun.tools.javac.util.Convert;
+import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by hejiaxu on 2021/2/19
@@ -45,14 +43,23 @@ public class Offer58ReverseWords {
     public static void main(String[] args) {
 
 //        String r = new Offer58ReverseWords().reverseWords("a good   example");
-        String r = new Offer58ReverseWords().reverseWords2("the sky is blue");
+        String r = new Offer58ReverseWords().reverseWords3("the sky is blue");
 
         System.out.println(r);
     }
 
 
+    // todo ?
     public String reverseWords(String s) {
         return Arrays.stream(s.split(" ")).filter(str -> str != null && !str.equals("")&& !str.equals("\u00A0")).sorted(Comparator.reverseOrder()).collect(Collectors.joining(" "));
+    }
+
+    public String reverseWords3(String s) {
+        return Arrays.stream(s.split(" ")).filter(str -> str != null && !str.equals("")&& !str.equals("\u00A0")).collect(
+                Collector.of(() -> new ArrayDeque<String>(),
+                        ArrayDeque::addFirst,
+                        (a, b) ->  a)    // dummy
+        ).stream().collect(Collectors.joining(" "));
     }
 
     public String reverseWords2(String s) {

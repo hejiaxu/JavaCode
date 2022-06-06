@@ -74,3 +74,6 @@ public class Offer26IsSubStructure {
         }
     }
 }
+
+// 一定存在完全相同的部分结构，递归匹配
+// 节点为空可以剪枝

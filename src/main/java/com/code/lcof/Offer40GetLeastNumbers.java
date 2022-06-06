@@ -88,3 +88,5 @@ public class Offer40GetLeastNumbers {
     }
 
 }
+
+// 快速排序，左侧大于4时结束

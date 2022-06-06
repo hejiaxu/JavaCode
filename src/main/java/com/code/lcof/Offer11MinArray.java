@@ -16,8 +16,8 @@ package com.code.lcof;
 public class Offer11MinArray {
     public static void main(String[] args) {
 
-        int[] nums = new int[]{3, 4, 5, 1, 2};
-        int r = new Offer11MinArray().minArray(nums);
+        int[] nums = new int[]{3, 4, 5,7,8,9, 1, 2};
+        int r = new Offer11MinArray().minArray2(nums);
         System.out.println(r);
     }
 
@@ -29,4 +29,39 @@ public class Offer11MinArray {
         }
         return numbers[0];
     }
+
+    public int minArray2(int[] numbers) {
+        for (int i = numbers.length - 1; i > 0; i--) {
+            if (numbers[i] < numbers[i - 1]) {
+                return numbers[i];
+            }
+        }
+        return numbers[0];
+    }
+
+    public int recur(int[] numbers, int l, int r) {
+        if (l > r) {
+            return -1;
+        }
+        if (l == r) {
+            return numbers[l];
+        }
+        if (l + 2 < r) {
+            return numbers[l] > numbers[r] ? numbers[r] : numbers[l];
+        }
+        int mid = (l + r) / 2;
+        if (numbers[mid] > numbers[mid + 1]) {
+            return numbers[mid + 1];
+        } else if (numbers[mid] < numbers[mid - 1]) {
+            return numbers[mid];
+        } else if (numbers[l] < numbers[r]) {
+            return recur(numbers, l, mid - 1);
+        } else {
+            return recur(numbers, mid + 1, r);
+
+        }
+
+    }
 }
+
+// review

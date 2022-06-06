@@ -107,3 +107,5 @@ public class Offer39MajorityElement {
         nums[j] = tmp;
     }
 }
+
+// 记录N个元素桶，计数，相同则加一，不同则减一，最后对多的那个

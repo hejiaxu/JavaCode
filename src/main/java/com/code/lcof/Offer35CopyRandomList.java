@@ -94,3 +94,4 @@ public class Offer35CopyRandomList {
         }
     }
 }
+// 用一个缓存map<老,新>记录已经映射过的点

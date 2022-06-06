@@ -10,7 +10,6 @@ public class SynchronousMQ {
     public static void main(String[] args) {
         SynchronousQueue<Integer> queue = new SynchronousQueue<>();
 
-
         new Thread(() -> {
             while (true) {
                 try {

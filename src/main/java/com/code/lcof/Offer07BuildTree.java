@@ -13,7 +13,7 @@ public class Offer07BuildTree {
     }
     int preL = 0;
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        int inL = 0, inR = preorder.length - 1;
+        int inL = 0, inR = inorder.length - 1;
 
 
         return dfs(preorder, inorder, inL, inR);
@@ -48,4 +48,6 @@ public class Offer07BuildTree {
             val = x;
         }
     }
+
 }
+// review

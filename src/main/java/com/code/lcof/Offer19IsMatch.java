@@ -107,3 +107,4 @@ public class Offer19IsMatch {
     }
 
 }
+// 动态规划数组存储过程中的比对结果，衍生判断增量几个条件

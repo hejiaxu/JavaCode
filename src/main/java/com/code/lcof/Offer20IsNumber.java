@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class Offer20IsNumber {
     public static void main(String[] args) {
-        String s = "-1E-16";
+        String s = "-1E-16.";
         boolean r = new Offer20IsNumber().isNumber(s);
         System.out.println(r);
     }
@@ -123,3 +123,5 @@ public class Offer20IsNumber {
     }
 
 }
+// review
+// 使用状态机的思路实现 Map<当前状态,Map<当前输入，下一个状态>>

@@ -1,9 +1,7 @@
 package com.code.lcof;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 import javafx.util.Pair;
 
@@ -78,3 +76,5 @@ public class Offer32LevelOrderII {
         }
     }
 }
+
+// 队列+pair存下所在层级，每次层级变化的时候换一个新列表存储

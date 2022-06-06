@@ -43,3 +43,6 @@ public class Offer22GetKthFromEnd {
         ListNode(int x) { val = x; }
     }
 }
+
+// 选一个前节点往前走，选一个后节点晚k步跟进。
+// 注意节点不够k个情况

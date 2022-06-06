@@ -1,7 +1,5 @@
 package com.code.lcof;
 
-import java.math.BigInteger;
-
 /**
  * Created by hejiaxu on 2021/2/19
  * 请实现一个函数，输入一个整数（以二进制串形式），输出该数二进制表示中 1 的个数。例如，把 9 表示成二进制是 1001，有 2 位是 1。因此，如果输入 9，则该函数输出 2。
@@ -31,7 +29,7 @@ import java.math.BigInteger;
  */
 public class Offer15HammingWeight {
     public static void main(String[] args) {
-        int n = -1;
+        int n = -100;
         int r = new Offer15HammingWeight().hammingWeight(n);
         System.out.println(r);
     }
@@ -73,3 +71,4 @@ public class Offer15HammingWeight {
     }
 
 }
+// reviewed

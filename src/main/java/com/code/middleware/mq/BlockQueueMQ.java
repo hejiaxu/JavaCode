@@ -25,18 +25,18 @@ public class BlockQueueMQ {
 
     class Consumer<T> implements Runnable {
         final BlockingQueue<T> queue;
-         Consumer(BlockingQueue<T> queue) {
+        Consumer(BlockingQueue<T> queue) {
             this.queue = queue;
         }
         void consume() {
-             while (true) {
-                 try {
-                     T element = queue.take();
-                     System.out.println(element);
-                 } catch (InterruptedException e) {
-                     e.printStackTrace();
-                 }
-             }
+            while (true) {
+                try {
+                    T element = queue.take();
+                    System.out.println(element);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         @Override
