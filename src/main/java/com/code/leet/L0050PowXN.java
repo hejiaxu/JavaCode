@@ -8,7 +8,7 @@ package com.code.leet;
  * Jun 21, 2017
  * 
  */
-public class PowXN {
+public class L0050PowXN {
 	public static void main(String[] args) {
 		int a = -2147483648;
 		int b = 0-a;
@@ -55,3 +55,6 @@ public class PowXN {
 		return tmp*tmp*ex;
 	}
 }
+
+// 循环二分或者递归都可以实现
+// 注意x可以为0,n可能为非正数
