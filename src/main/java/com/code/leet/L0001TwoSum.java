@@ -35,43 +35,5 @@ public class L0001TwoSum {
         }
         return new int[]{-1, -1};
 	}
-	public static int[] twoSum2(int[] nums, int target) {
-        int l=0,r=nums.length-1;
-        while(l<r){
-        	if (nums[l]+nums[r]==target) {
-				break;
-			}else if (nums[l]+nums[r]>target) {
-				int start=l+1,end=r-1;
-				int mid = start;
-				while(start<end){
-					mid = (start+end)/2;
-					if (nums[mid] ==target-nums[l]) {
-						break;
-					}else if (nums[mid] >target-nums[l]) {
-						end=mid-1;
-					}else {
-						start=mid+1;
-					}
-				}
-				r=mid;
-			} else {
-				int start=l+1,end=r-1;
-				int mid = start;
-				while(start<end){
-					mid = (start+end)/2;
-					if (nums[mid]==target-nums[r]) {
-						break;
-					}else if (nums[mid]>target-nums[r]){
-						end=mid-1;
-					}else {
-						start=mid+1;
-					}
-				}
-				l=mid;
-			}
-        }
-        return new int[]{nums[l],nums[r]};
-
-    }
 
 }

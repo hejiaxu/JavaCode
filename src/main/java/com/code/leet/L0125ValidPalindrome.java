@@ -4,15 +4,36 @@
 package com.code.leet;
 
 /**
- * Jiaxu
- * Oct 27, 2016
+ * A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+ *
+ * Given a string s, return true if it is a palindrome, or false otherwise.
+ *
+ *  
+ *
+ * Example 1:
+ *
+ * Input: s = "A man, a plan, a canal: Panama"
+ * Output: true
+ * Explanation: "amanaplanacanalpanama" is a palindrome.
+ * Example 2:
+ *
+ * Input: s = "race a car"
+ * Output: false
+ * Explanation: "raceacar" is not a palindrome.
+ * Example 3:
+ *
+ * Input: s = " "
+ * Output: true
+ * Explanation: s is an empty string "" after removing non-alphanumeric characters.
+ * Since an empty string reads the same forward and backward, it is a palindrome.
+ *
  * 
  */
-public class ValidPalindrome {
+public class L0125ValidPalindrome {
 
 	public static void main(String[] args) {
 		// TODO 
-		ValidPalindrome bean = new ValidPalindrome();
+		L0125ValidPalindrome bean = new L0125ValidPalindrome();
 		String s = "A man, a plan, a canal: Panama";
 		boolean palindrome = bean.isPalindrome2(s);
 		System.out.println(palindrome);
@@ -148,3 +169,6 @@ public class ValidPalindrome {
         return new StringBuilder(s).reverse().toString().equals(s);
     }
 }
+
+// 通过Character类判断是否是数字字母，以及转换大小写
+// 两端往中间走，非数字字母跳过，其他转成大写比较，不同则失败，直到相撞则成功。
