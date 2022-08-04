@@ -20,7 +20,7 @@ package com.code.lcof;
  *
  * 限制：
  *
- * 0 <= n < 2^31
+ * 0 <= n <2^31
  * 注意：本题与主站 400 题相同：https://leetcode-cn.com/problems/nth-digit/
  *
  */

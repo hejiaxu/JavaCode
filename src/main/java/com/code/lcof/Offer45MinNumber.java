@@ -4,6 +4,8 @@ import com.sun.deploy.util.StringUtils;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Created by hejiaxu on 2021/2/19
@@ -40,7 +42,25 @@ public class Offer45MinNumber {
         System.out.println(s1);
     }
 
-    public String minNumber(int[] nums) {
+    public String minNumber2(int[] nums) {
         return Arrays.stream(nums).mapToObj(String::valueOf).sorted((a, b) -> (a + b).compareTo(b + a)).collect(Collectors.joining());
+    }
+
+    public String minNumber(int[] nums) {
+        IntStream stream = Arrays.stream(nums);
+        Stream.of(nums);
+        Stream<String> stringStream = stream.mapToObj(String::valueOf);
+        Stream<Integer> integerStream = stringStream.map(Integer::parseInt);
+        Stream<Integer> sorted = integerStream.sorted((a, b) ->  (a * getHeight(b) + b) - (b * getHeight(a) + a));
+        return sorted.map(String::valueOf).collect(Collectors.joining());
+    }
+
+    int getHeight(int i) {
+
+        int r = 10;
+        while (i / r > 0) {
+            r *= 10;
+        }
+        return r;
     }
 }

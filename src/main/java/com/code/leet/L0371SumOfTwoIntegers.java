@@ -4,11 +4,22 @@
 package com.code.leet;
 
 /**
- * Jiaxu
- * Aug 29, 2016
+ * Given two integers a and b, return the sum of the two integers without using the operators + and -.
+ *
+ *  
+ *
+ * Example 1:
+ *
+ * Input: a = 1, b = 2
+ * Output: 3
+ * Example 2:
+ *
+ * Input: a = 2, b = 3
+ * Output: 5
+ *
  * 
  */
-public class SumOfTwoIntegers {
+public class L0371SumOfTwoIntegers {
 
 	public static void main(String[] args) {
 		// TODO 
@@ -32,3 +43,4 @@ public class SumOfTwoIntegers {
 	    return a | b;   
 	 }
 }
+
