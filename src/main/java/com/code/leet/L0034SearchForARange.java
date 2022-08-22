@@ -12,7 +12,7 @@ For example,
 Given [5, 7, 7, 8, 8, 10] and target value 8,
 return [3, 4].
  */
-public class L0034SearchforaRange {
+public class L0034SearchForARange {
     public int[] searchRange(int[] nums, int target) {
         int[] result = {-1, -1};
         int ll = 0;
@@ -45,9 +45,10 @@ public class L0034SearchforaRange {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1};
+//        int[] nums = {1};
+        int[] nums = {1,2};
         int target = 1;
-        int[] ints = new L0034SearchforaRange().searchRange(nums, target);
+        int[] ints = new L0034SearchForARange().searchRange(nums, target);
         System.out.println(ints[0]);
         System.out.println(ints[1]);
     }

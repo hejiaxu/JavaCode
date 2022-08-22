@@ -3,7 +3,7 @@ package com.code.leet;
 import java.util.Deque;
 import java.util.LinkedList;
 
-public class L0653TwoSumIV_InputisaBST {
+public class L0653TwoSumIVInputIsABST {
     public static void main(String[] args) {
 
     }

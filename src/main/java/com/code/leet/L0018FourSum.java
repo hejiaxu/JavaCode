@@ -10,7 +10,7 @@ import java.util.*;
  * Jun 21, 2017
  * 
  */
-public class FourSum {
+public class L0018FourSum {
 
 	public static void main(String[] args) {
 		// TODO 

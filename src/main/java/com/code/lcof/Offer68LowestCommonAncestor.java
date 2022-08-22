@@ -71,3 +71,4 @@ public class Offer68LowestCommonAncestor {
         }
     }
 }
+// 1.深度优先遍历找到第一个在p和q之间的节点(包括p和q)。如果大于p和q就往左走子树走，小于则往右子树走
