@@ -23,10 +23,10 @@ Note:
 bits[i] is always 0 or 1.
 
  */
-public class L07171bitand2bitCharacters {
+public class L0717OneBitAndTwoBitCharacters {
     public static void main(String[] args) {
         int[] bits = {1, 1, 1, 0};
-        boolean oneBitCharacter = new L07171bitand2bitCharacters().isOneBitCharacter(bits);
+        boolean oneBitCharacter = new L0717OneBitAndTwoBitCharacters().isOneBitCharacter(bits);
         System.out.println(oneBitCharacter);
     }
     public boolean isOneBitCharacter(int[] bits) {

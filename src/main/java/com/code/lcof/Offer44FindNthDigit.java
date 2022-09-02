@@ -31,10 +31,9 @@ public class Offer44FindNthDigit {
     }
 
     /**
-     * 1.每个区间10倍增加
-     * 2.计算区间
-     * 3.按照数字除取的数字  n - 1 / 单数位数
-     * 4.按照取余取的位数, n-1 mod 单数位数
+     * 1.每个区间10倍增加，计算区间
+     * 2.按照数字除取的数字  n - 1 / 单数位数
+     * 3.按照取余取的位数, n-1 mod 单数位数
      */
     public int findNthDigit(int n) {
         int digitNum = 1;

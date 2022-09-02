@@ -32,3 +32,5 @@ public class DIY_ATOI {
         return intResult;
     }
 }
+
+// 1.标记正负号，2.数字*10累加，3.非法字符置为0，4.越界处理，置为边界值
