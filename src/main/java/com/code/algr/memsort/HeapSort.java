@@ -1,6 +1,5 @@
 package com.code.algr.memsort;
 
-import com.sun.deploy.util.StringUtils;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -12,7 +11,7 @@ public class HeapSort {
     public static void main(String[] args) {
         int[] nums = {2, 3, 5, 1, 7, 3, 9};
         sort(nums);
-        String join = StringUtils.join(Arrays.stream(nums).mapToObj(String::valueOf).collect(Collectors.toList()), ",");
+        String join = String.join( ",", Arrays.stream(nums).mapToObj(String::valueOf).collect(Collectors.toList()));
         System.out.println(join);
     }
 

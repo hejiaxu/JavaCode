@@ -1,6 +1,5 @@
 package com.code.leet;
 
-import com.sun.deploy.util.StringUtils;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,9 +16,9 @@ public class L0054SpiralMatrix {
         int[][] matrix1 = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         int[][] matrix2 = new int[][]{{1, 2, 3}};
         int[][] matrix3 = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}};
-        System.out.println(StringUtils.join(Stream.of(spiralOrder(matrix1)).map(Object::toString).collect(Collectors.toList()), ","));
-        System.out.println(StringUtils.join(Stream.of(spiralOrder(matrix2)).map(Object::toString).collect(Collectors.toList()), ","));
-        System.out.println(StringUtils.join(Stream.of(spiralOrder(matrix3)).map(Object::toString).collect(Collectors.toList()), ","));
+        System.out.println(String.join(",", Stream.of(spiralOrder(matrix1)).map(Object::toString).collect(Collectors.toList())));
+        System.out.println(String.join(",", Stream.of(spiralOrder(matrix2)).map(Object::toString).collect(Collectors.toList())));
+        System.out.println(String.join(",", Stream.of(spiralOrder(matrix3)).map(Object::toString).collect(Collectors.toList())));
     }
     // 123
     // 456

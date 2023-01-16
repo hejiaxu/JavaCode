@@ -1,6 +1,5 @@
 package com.code.leet;
 
-import javafx.util.Pair;
 
 public class L0543DiameterOfBinaryTree {
 

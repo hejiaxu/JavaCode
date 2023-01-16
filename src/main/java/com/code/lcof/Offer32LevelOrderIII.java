@@ -3,7 +3,6 @@ package com.code.lcof;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import javafx.util.Pair;
 
 /**
  * Created by hejiaxu on 2021/2/19
@@ -38,7 +37,7 @@ public class Offer32LevelOrderIII {
     }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
-        Pair<TreeNode, Integer> pair = new Pair<>(root, 0);
+            Pair<TreeNode, Integer> pair = new Pair<>(root, 0);
         Queue<Pair<TreeNode, Integer>> queue = new LinkedList<>();
         queue.offer(pair);
         int level = -1;

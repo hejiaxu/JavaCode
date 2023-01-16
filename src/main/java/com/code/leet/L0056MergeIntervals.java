@@ -1,6 +1,5 @@
 package com.code.leet;
 
-import com.sun.deploy.util.StringUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -13,10 +12,12 @@ public class L0056MergeIntervals {
     public static void main(String[] args) {
         int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         int[][] merge = merge(intervals);
-        Arrays.stream(merge).map(s -> StringUtils.join(Arrays.stream(s).mapToObj(String::valueOf).collect(Collectors.toList()), ",")
+        Arrays.stream(merge).map(s -> String.join(",", Arrays.stream(s).mapToObj(String::valueOf).collect(Collectors.toList()))
         ).forEach(System.out::println);
     }
 
+    // 1. array comparator.comparingInt
+    // 2.toArray(new int[0][0])
     public static int[][] merge(int[][] intervals) {
         if (intervals.length <= 1) {
             return intervals;
