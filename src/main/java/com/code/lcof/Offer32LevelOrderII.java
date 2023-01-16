@@ -7,33 +7,31 @@ import java.util.Queue;
 /**
  * Created by hejiaxu on 2021/2/19
  * 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
- *
+ * <p>
  *  
- *
+ * <p>
  * 例如:
  * 给定二叉树: [3,9,20,null,null,15,7],
- *
- *     3
- *    / \
- *   9  20
- *     /  \
- *    15   7
+ * <p>
+ * 3
+ * / \
+ * 9  20
+ * /  \
+ * 15   7
  * 返回其层次遍历结果：
- *
+ * <p>
  * [
- *   [3],
- *   [9,20],
- *   [15,7]
+ * [3],
+ * [9,20],
+ * [15,7]
  * ]
  *  
- *
+ * <p>
  * 提示：
- *
+ * <p>
  * 节点总数 <= 1000
  * 注意：本题与主站 102 题相同：https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
- *
- *
- * */
+ */
 public class Offer32LevelOrderII {
     public static void main(String[] args) {
         TreeNode a = new Offer32LevelOrderII().new TreeNode(0), b = new Offer32LevelOrderII().new TreeNode(0);

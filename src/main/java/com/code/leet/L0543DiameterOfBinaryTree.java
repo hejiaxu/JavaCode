@@ -4,6 +4,7 @@ package com.code.leet;
 public class L0543DiameterOfBinaryTree {
 
     int max = 0;
+
     public int diameterOfBinaryTree(TreeNode root) {
         dfs(root);
         return max;
