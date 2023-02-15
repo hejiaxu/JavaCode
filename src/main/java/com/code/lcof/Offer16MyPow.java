@@ -87,5 +87,25 @@ public class Offer16MyPow {
 
         return r;
     }
+
+
+    public double myPow3(double x, int n) {
+        if (x == 0) {
+            return 0.0;
+        }
+        if (n == 0) {
+            return 1.0;
+        }
+        int sign = x < 0 & n % 2 == 1 ? -1 : 1;
+        x = x < 0 ? -x : x;
+        double r = 1.0;
+        while (n != 0) {
+            r *= (n % 2 == 1 ? x : n % 2 == -1 ? 1 / x : 1);
+            x *= x;
+            n /= 2;
+        }
+
+        return r * sign;
+    }
 }
 // review

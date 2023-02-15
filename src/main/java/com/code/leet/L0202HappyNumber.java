@@ -1,5 +1,8 @@
 package com.code.leet;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /*
 Write an algorithm to determine if a number is "happy".
 
@@ -35,6 +38,30 @@ public class L0202HappyNumber {
             num = sum;
         }
         return false;
+    }
+
+
+    public boolean isHappy2(int n) {
+        int num = n;
+        Set<Integer> set = new HashSet<>();
+        while (true) {
+            int o = num % 10;
+            int sum = o * o;
+            while (num >= 10) {
+                num = num / 10;
+                o = num % 10;
+                sum += o * o;
+            }
+            if (sum == 1) {
+                return true;
+            }
+            if (set.contains(sum)) {
+                return false;
+            } else {
+                set.add(sum);
+            }
+            num = sum;
+        }
     }
 
 }
